@@ -1,13 +1,28 @@
 using EventHub.Api.Data;
 using EventHub.Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<AppDbContext>(o => o.UseInMemoryDatabase("eventhub")); // swap to UseSqlServer
+builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer("DefaultConnection"));
 builder.Services.AddScoped<JwtTokenService>();
 
 // Add services to the container.
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        var key = builder.Configuration[""]!;
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+        };
+    });
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();

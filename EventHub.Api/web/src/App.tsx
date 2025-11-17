@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Route, Routes} from 'react-router-dom'
+import Header from './components/Header'
+import Home from './pages/Home'
+import Catalog from './pages/Catalog'
+import NotFound from './pages/NotFound'
+import PublicOnly from './components/PublicOnly'
+import Protected from './components/Protected'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import MyEvents from './pages/MyEvents'
+import Create from './pages/Create'
+import Edit from './pages/Edit'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+    return (
+        <div className="app">
+            <Header />
+            <main className="container">
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/events" element={<Catalog/>}/>
+                    <Route path="/me/events" element={<Protected><MyEvents /></Protected>} />
+                    <Route path="/events/create" element={<Protected><Create /></Protected>} />
+                    <Route path="/events xs/:eventId/edit" element={<Protected><Edit /></Protected>} />
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+                    <Route path="/login" element={<PublicOnly><Login/></PublicOnly>}/>
+                    <Route path="/register" element={<PublicOnly><Register/></PublicOnly>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </main>
+        </div>
+    )
 }
-
-export default App
