@@ -1,6 +1,5 @@
 ﻿using EventHub.Api.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
 
 namespace EventHub.Api.Data
 {

@@ -97,7 +97,7 @@ export default function Details() {
         );
     }
 
-    const likeCount = event.likes?.length ?? 0;
+    const likeCount = event.likesCount ?? 0;
 
     return (
         <section>

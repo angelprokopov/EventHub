@@ -2,7 +2,7 @@ import { http } from './httpClient';
 
 
 export type Event = {
-    id: string; title: string; description: string; startAt: string; location: string; price?: number; imageUrl: string; createdBy: string; likes: string[];
+    id: string; title: string; description: string; startAt: string; location: string; price?: number; imageUrl: string; createdBy: string; likesCount: number;
 }
 
 

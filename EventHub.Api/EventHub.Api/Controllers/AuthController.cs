@@ -3,7 +3,7 @@ using EventHub.Api.DTOs;
 using EventHub.Api.Models;
 using EventHub.Api.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
@@ -40,7 +40,7 @@ namespace EventHub.Api.Controllers
         public async Task<ActionResult<AuthResponse>> Login(LoginDto dto)
         {
             var user = await _appDb.Users.FirstOrDefaultAsync(u=>u.Email == dto.Email);
-            if(user is null || user.PasswordHash != Hash(dto.Password)))
+            if(user is null || user.PasswordHash != Hash(dto.Password))
                     return Unauthorized();
 
             var token = _jwt.Create(user);

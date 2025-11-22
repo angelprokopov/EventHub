@@ -10,7 +10,7 @@
         public decimal? Price { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
         public string CreatedBy { get; set; } = string.Empty;
-        public HashSet<string> Likes { get; set; } = new();
+        public int LikesCount { get; set; } = 0;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

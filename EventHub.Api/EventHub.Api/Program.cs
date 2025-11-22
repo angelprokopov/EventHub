@@ -7,7 +7,8 @@ using System;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer("DefaultConnection"));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); 
 builder.Services.AddScoped<JwtTokenService>();
 
 // Add services to the container.
