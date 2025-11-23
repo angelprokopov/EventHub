@@ -42,12 +42,14 @@ export default function Register() {
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         placeholder="Email"
+                        required
                     />
                     <input
                         type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         placeholder="Password"
+                        required
                     />
                     <button className="btn btn-primary">Create account</button>
                 </form>
