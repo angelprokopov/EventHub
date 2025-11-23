@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web|c:\\users\\angel\\source\\repos\\eventhub.api\\web\\src\\pages\\details.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web\\src\\pages\\details.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web|solutionrelative:web\\src\\pages\\details.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web|c:\\users\\angel\\source\\repos\\eventhub.api\\web\\src\\api\\events.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "AbsoluteMoniker": "D:0:0:{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web\\src\\api\\events.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}|C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web|solutionrelative:web\\src\\api\\events.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
@@ -38,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,13 +70,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "EventHub.Api\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "EventHub.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-23T09:10:13.639Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Program.cs",
               "RelativeDocumentMoniker": "EventHub.Api\\Program.cs",
               "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Program.cs",
               "RelativeToolTip": "EventHub.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-22T11:51:23.294Z",
               "EditorCaption": ""
@@ -84,19 +97,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "EventHub.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\appsettings.json",
-              "RelativeToolTip": "EventHub.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAACEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-11-22T11:50:29.815Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Details.tsx",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\web\\src\\pages\\Details.tsx",
               "RelativeDocumentMoniker": "web\\src\\pages\\Details.tsx",
@@ -104,8 +104,7 @@
               "RelativeToolTip": "web\\src\\pages\\Details.tsx",
               "ViewState": "AgIAAG4AAAAAAAAAAAAAwGMAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-22T11:38:58.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:38:58.956Z"
             },
             {
               "$type": "Document",
@@ -117,8 +116,7 @@
               "RelativeToolTip": "web\\src\\api\\events.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAACWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-11-22T11:38:07.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:38:07.249Z"
             },
             {
               "$type": "Document",
@@ -130,8 +128,7 @@
               "RelativeToolTip": "EventHub.Api\\Controllers\\EventsController.cs",
               "ViewState": "AgIAAFMAAAAAAAAAAAAswF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:36:44.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:36:44.161Z"
             },
             {
               "$type": "Document",
@@ -143,8 +140,7 @@
               "RelativeToolTip": "EventHub.Api\\Models\\Event.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAYwAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:29:55.312Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:29:55.312Z"
             },
             {
               "$type": "Document",
@@ -156,8 +152,7 @@
               "RelativeToolTip": "EventHub.Api\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-22T11:22:38.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-22T11:22:38.428Z"
             }
           ]
         }

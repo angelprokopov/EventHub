@@ -73,3 +73,9 @@ C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Microsoft
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net7.0\staticwebassets.upToDateCheck.txt
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net7.0\EventHub.Api.MvcApplicationPartsAssemblyInfo.cs
