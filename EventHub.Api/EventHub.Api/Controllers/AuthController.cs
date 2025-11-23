@@ -17,12 +17,14 @@ namespace EventHub.Api.Controllers
         private readonly AppDbContext _appDb;
         private readonly JwtTokenService _jwt;
         private readonly IEmailService _emailService;
+        private readonly IConfiguration _config;
 
-        public AuthController(AppDbContext appDb, JwtTokenService jwt, IEmailService emailService)
+        public AuthController(AppDbContext appDb, JwtTokenService jwt, IEmailService emailService, IConfiguration config)
         {
             _appDb = appDb;
             _jwt = jwt;
             _emailService = emailService;
+            _config = config;
         }
 
         [HttpPost("register")]
@@ -70,6 +72,27 @@ namespace EventHub.Api.Controllers
 
             var token = _jwt.Create(user);
             return new AuthResponse(token, user.Id, user.Email, user.DisplayName);
+        }
+
+        [HttpGet("confirm")]
+        public async Task<IActionResult> ConfirmEmail([FromQuery] string userId, [FromQuery] string code)
+        {
+            var user = await _appDb.Users.FindAsync(userId);
+            var frontEnd = _config["Frontend:BaseUrl"] ?? "https://localhost:7132/";
+            if (user is null)
+                return NotFound("User not found");
+            
+            if (user.EmailConfirmed)
+                return Ok("Email already confirmed");
+
+            if (user.EmailConfirmationCode != code)
+                return BadRequest("Invalid confirmation code");
+
+            user.EmailConfirmed = true;
+            user.EmailConfirmationCode = null;
+            await _appDb.SaveChangesAsync();
+
+            return Redirect($"{frontEnd}/login?confirmed=1");
         }
 
         private static string Hash(string input)
