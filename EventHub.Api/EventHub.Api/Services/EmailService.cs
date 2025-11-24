@@ -21,8 +21,9 @@ namespace EventHub.Api.Services
             var enableSsl = bool.Parse(_conf["Smtp:EnableSsl"] ?? "true");
             var user = _conf["Smtp:User"];
             var password = _conf["Smtp:Password"];
+            var from = _conf["Smtp:From"];
 
-            if (string.IsNullOrWhiteSpace(host) || string.IsNullOrWhiteSpace(user))
+            if (string.IsNullOrWhiteSpace(host) || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password))
             {
                 _logger.LogError("SMTP configuration missing or invalid.");
                 throw new InvalidOperationException("SMTP configuration missing.");
@@ -34,8 +35,14 @@ namespace EventHub.Api.Services
                 EnableSsl = enableSsl
             };
 
+            if (string.IsNullOrWhiteSpace(from))
+            {
+                from = user;
+            }
+
             using var message = new MailMessage
             {
+                From = new MailAddress(from),
                 Subject = subject,
                 Body = body,
                 IsBodyHtml = true

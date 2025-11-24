@@ -19,11 +19,18 @@ namespace EventHub.Api.Controllers
         public async Task<ActionResult<IEnumerable<Event>>> GetAll([FromQuery] string? q, [FromQuery] string? location)
         {
             var query = _db.Events.AsQueryable();
-            if(!string.IsNullOrWhiteSpace(q))
-                query = query.Where(e=>e.Title.Contains(q) || e.Description.Contains(q));
-            if(!string.IsNullOrWhiteSpace(location))
-                query = query.Where(l=>l.Location.Contains(location));
-            return await query.OrderByDescending(e=>e.CreatedAt).ToListAsync();
+            if (!string.IsNullOrWhiteSpace(q))
+            {
+                query = query.Where(e =>
+                    e.Title.Contains(q) ||
+                    e.Description.Contains(q));
+            }
+
+            var result = await query
+                .OrderByDescending(e => e.StartAt)
+                .ToListAsync();
+
+            return Ok(result);
         }
 
         [HttpGet("{id}")]

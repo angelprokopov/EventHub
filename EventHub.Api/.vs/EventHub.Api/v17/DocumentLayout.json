@@ -5,6 +5,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\dtos\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\dtos\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,13 +58,52 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthDtos.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\DTOs\\AuthDtos.cs",
+              "RelativeDocumentMoniker": "EventHub.Api\\DTOs\\AuthDtos.cs",
+              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\DTOs\\AuthDtos.cs",
+              "RelativeToolTip": "EventHub.Api\\DTOs\\AuthDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T21:36:55.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "EventHub.Api\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Services\\EmailService.cs",
+              "RelativeToolTip": "EventHub.Api\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T21:35:26.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EventsController.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\EventsController.cs",
+              "RelativeDocumentMoniker": "EventHub.Api\\Controllers\\EventsController.cs",
+              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\EventsController.cs",
+              "RelativeToolTip": "EventHub.Api\\Controllers\\EventsController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T13:31:34.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "EventHub.Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "EventHub.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAkwF4AAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T11:40:01.036Z",
               "EditorCaption": ""
