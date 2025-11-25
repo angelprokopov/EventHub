@@ -2,10 +2,15 @@ import {http} from "./httpClient.ts";
 
 type AuthResponse = {token: string;userId: string;displayName: string;email: string};
 
-export function login(payload: {email: string; password: string }) : Promise<AuthResponse> {
-    return http('api/auth/login', {method: 'POST', body: JSON.stringify(payload)});
+export function login(email: string, password: string) {
+    return http<AuthResponse>('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password }),
+    });
 }
-
-export function register(payload: {email: string; password: string; displayName: string}): Promise<AuthResponse>{
-    return http('api/auth/register', {method: 'POST', body: JSON.stringify(payload)});
+export function register(email: string, password: string, displayName: string) {
+    return http<AuthResponse>('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({email, password, displayName})
+    });
 }

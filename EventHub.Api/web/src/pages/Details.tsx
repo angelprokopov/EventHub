@@ -3,6 +3,8 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import * as eventsApi from '../api/events';
 import * as commentsApi from '../api/comments';
 import { useAuth } from '../contexts/AuthContext';
+import Map from '../components/Map';
+import Weather from '../components/Weather';
 
 export default function Details() {
     const { eventId } = useParams();
@@ -113,6 +115,16 @@ export default function Details() {
                 {new Date(event.startAt).toLocaleString()} — {event.location}
             </p>
             <p>{event.description}</p>
+
+            <div className="map-container">
+                <h3>Location</h3>
+                <Map address={event.location} />
+            </div>
+
+            <div style={{marginTop:'20px'}}>
+                <Weather city={event.location}/>
+            </div>
+
             <p>
                 <strong>Likes:</strong> {likeCount}
             </p>

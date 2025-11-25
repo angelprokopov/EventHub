@@ -28,14 +28,14 @@ export function AuthProvider({children}: {children: React.ReactNode}) {
         user,
         token,
         async login(email: string, password: string) {
-            const res = await authApi.login({email, password});
+            const res = await authApi.login(email, password);
             const u = {id: res.userId, email: res.email, displayName: res.displayName};
             setUser(u);
             setToken(res.token);
             localStorage.setItem('auth', JSON.stringify({user:u, token: res.token}));
         },
         async register(email: string, password: string, displayName: string) {
-            const res = await authApi.register({email, password, displayName});
+            const res = await authApi.register(email, password, displayName);
             const u = {id: res.userId, email: res.email, displayName: res.displayName};
             setUser(u);
             setToken(res.token);

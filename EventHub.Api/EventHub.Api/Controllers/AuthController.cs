@@ -66,9 +66,21 @@ namespace EventHub.Api.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<AuthResponse>> Login(LoginDto dto)
         {
-            var user = await _appDb.Users.FirstOrDefaultAsync(u=>u.Email == dto.Email);
-            if(user is null || user.PasswordHash != Hash(dto.Password))
-                    return Unauthorized();
+            var user = await _appDb.Users.FirstOrDefaultAsync(u => u.Email == dto.Email);
+            if (user is null)
+            {
+                return Unauthorized("Invalid email or password");
+            }
+
+            if (!Verify(dto.Password, user.PasswordHash))
+            {
+                return Unauthorized("Invalid email or password");
+            }
+
+            if (!user.EmailConfirmed)
+            {
+                return Unauthorized("Please confirm your email before logging in.");
+            }
 
             var token = _jwt.Create(user);
             return new AuthResponse(token, user.Id, user.Email, user.DisplayName);
@@ -97,8 +109,16 @@ namespace EventHub.Api.Controllers
 
         private static string Hash(string input)
         {
-            using var hash = SHA256.Create();
-            return Convert.ToHexString(hash.ComputeHash(Encoding.UTF8.GetBytes(input)));
+            using var sha = System.Security.Cryptography.SHA256.Create();
+            var bytes = System.Text.Encoding.UTF8.GetBytes(input);
+            var hashBytes = sha.ComputeHash(bytes);
+            return Convert.ToBase64String(hashBytes);
         } 
+
+        private static bool Verify(string password, string storedHash)
+        {
+            var hashOfInput = Hash(password);
+            return hashOfInput == storedHash;  
+        }
     }
 }
