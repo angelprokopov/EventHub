@@ -263,7 +263,7 @@
         }
       }
     },
-    "/api/events/{eventId}/Events": {
+    "/api/Events": {
       "get": {
         "tags": [
           "Events"
@@ -279,14 +279,6 @@
           {
             "name": "location",
             "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "eventId",
-            "in": "path",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -327,16 +319,6 @@
       "post": {
         "tags": [
           "Events"
-        ],
-        "parameters": [
-          {
-            "name": "eventId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "requestBody": {
           "content": {
@@ -381,7 +363,7 @@
         }
       }
     },
-    "/api/events/{eventId}/Events/{id}": {
+    "/api/Events/{id}": {
       "get": {
         "tags": [
           "Events"
@@ -389,14 +371,6 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "eventId",
             "in": "path",
             "required": true,
             "schema": {
@@ -434,14 +408,6 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "eventId",
             "in": "path",
             "required": true,
             "schema": {
@@ -486,14 +452,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "eventId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -503,7 +461,7 @@
         }
       }
     },
-    "/api/events/{eventId}/Events/{id}/like": {
+    "/api/Events/{id}/like": {
       "post": {
         "tags": [
           "Events"
@@ -511,14 +469,6 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "eventId",
             "in": "path",
             "required": true,
             "schema": {

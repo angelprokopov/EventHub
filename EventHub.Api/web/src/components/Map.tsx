@@ -1,21 +1,18 @@
-type Props = {
-    address: string
-}
+type Props = { address: string };
 
-export default function Map({address}: Props) {
-    const key= import.meta.env.VITE_GOOGLE_MAPS_KEY
-    const encoded = encodeURIComponent(address)
-
-    const url = `https://www.google.com/maps/embed/v1/place?key=${key}&q=${encoded}`
+export default function Map({ address }: Props) {
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        address
+    )}`;
 
     return (
-        <iframe
-            width="100%"
-            height="300"
-            loading="lazy"
-            style={{ border: 0, borderRadius: '12px' }}
-            allowFullScreen
-            src={url}
-        />
-    )
+        <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline"
+        >
+            View on Google Maps
+        </a>
+    );
 }

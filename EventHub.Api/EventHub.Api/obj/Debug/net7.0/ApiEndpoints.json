@@ -73,6 +73,63 @@
     ]
   },
   {
+    "ContainingType": "EventHub.Api.Controllers.EventsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Events",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "q",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "location",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[EventHub.Api.Models.Event, EventHub.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "EventHub.Api.Controllers.EventsController",
+    "Method": "Create",
+    "RelativePath": "api/Events",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EventHub.Api.DTOs.EventCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EventHub.Api.Models.Event",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "EventHub.Api.Controllers.CommentsController",
     "Method": "GetForEvent",
     "RelativePath": "api/events/{eventId}/Comments",
@@ -152,75 +209,8 @@
   },
   {
     "ContainingType": "EventHub.Api.Controllers.EventsController",
-    "Method": "GetAll",
-    "RelativePath": "api/events/{eventId}/Events",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "q",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "location",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "eventId",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[EventHub.Api.Models.Event, EventHub.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EventHub.Api.Controllers.EventsController",
-    "Method": "Create",
-    "RelativePath": "api/events/{eventId}/Events",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "EventHub.Api.DTOs.EventCreateDto",
-        "IsRequired": true
-      },
-      {
-        "Name": "eventId",
-        "Type": "",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "EventHub.Api.Models.Event",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "EventHub.Api.Controllers.EventsController",
     "Method": "GetById",
-    "RelativePath": "api/events/{eventId}/Events/{id}",
+    "RelativePath": "api/Events/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -228,11 +218,6 @@
       {
         "Name": "id",
         "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "eventId",
-        "Type": "",
         "IsRequired": true
       }
     ],
@@ -251,7 +236,7 @@
   {
     "ContainingType": "EventHub.Api.Controllers.EventsController",
     "Method": "Update",
-    "RelativePath": "api/events/{eventId}/Events/{id}",
+    "RelativePath": "api/Events/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -265,11 +250,6 @@
         "Name": "dto",
         "Type": "EventHub.Api.DTOs.EventUpdateDto",
         "IsRequired": true
-      },
-      {
-        "Name": "eventId",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -277,7 +257,7 @@
   {
     "ContainingType": "EventHub.Api.Controllers.EventsController",
     "Method": "Delete",
-    "RelativePath": "api/events/{eventId}/Events/{id}",
+    "RelativePath": "api/Events/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -286,11 +266,6 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
-      },
-      {
-        "Name": "eventId",
-        "Type": "",
-        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -298,7 +273,7 @@
   {
     "ContainingType": "EventHub.Api.Controllers.EventsController",
     "Method": "ToggleLike",
-    "RelativePath": "api/events/{eventId}/Events/{id}/like",
+    "RelativePath": "api/Events/{id}/like",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -306,11 +281,6 @@
       {
         "Name": "id",
         "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "eventId",
-        "Type": "",
         "IsRequired": true
       }
     ],

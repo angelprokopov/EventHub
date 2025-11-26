@@ -9,7 +9,7 @@ using System.Security.Claims;
 namespace EventHub.Api.Controllers
 {
     [ApiController]
-    [Route("api/events/{eventId}/[controller]")]
+    [Route("api/[controller]")]
     public class EventsController : ControllerBase
     {
         private readonly AppDbContext _db;
@@ -39,9 +39,8 @@ namespace EventHub.Api.Controllers
             var ev = await _db.Events.FindAsync(id);
             return ev is null ? NotFound() : ev;
         }
-
-        [Authorize]
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult<Event>> Create(EventCreateDto dto)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirstValue(ClaimTypes.NameIdentifier) ?? User.FindFirst("sub")?.Value;

@@ -561,3 +561,247 @@ button {
     margin-top: 20px;
     box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
+
+.details-section {
+    margin-top: 24px;
+}
+
+/* Weather card */
+.weather-card {
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.weather-header h3 {
+    margin: 0 0 8px;
+}
+
+.weather-body {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.weather-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.weather-main p {
+    margin: 2px 0;
+}
+
+.weather-description {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Likes + action buttons */
+.details-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 420px;
+}
+
+.likes-count {
+    font-size: 0.95rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: #6366f1;
+    color: #fff;
+}
+
+.btn-outline {
+    background: #fff;
+    border-color: #cbd5f5;
+    color: #4f46e5;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #fff;
+}
+
+/* Comments */
+.comments-section {
+    max-width: 640px;
+}
+
+.comment-form {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.comment-input {
+    flex: 1;
+    min-height: 60px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+.details-page .hero {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.details-section {
+    margin-top: 24px;
+}
+
+/* Weather card */
+.weather-card {
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.weather-body {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.weather-icon {
+    width: 56px;
+    height: 56px;
+}
+
+.weather-main p {
+    margin: 2px 0;
+}
+
+.weather-description {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* Likes + actions */
+.details-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 420px;
+}
+
+.likes-count {
+    font-size: 0.95rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Generic button styles */
+.btn {
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: #6366f1;
+    color: #fff;
+}
+
+.btn-outline {
+    background: #fff;
+    border-color: #cbd5f5;
+    color: #4f46e5;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #fff;
+}
+
+.btn-xs {
+    padding: 2px 8px;
+    font-size: 0.75rem;
+}
+
+/* Comments */
+.comments-section {
+    max-width: 640px;
+}
+
+.comment-form {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+}
+
+.comment-input {
+    flex: 1;
+    min-height: 60px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    resize: vertical;
+}
+
+.comments-list {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+.comment-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}

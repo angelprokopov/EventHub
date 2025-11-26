@@ -102,7 +102,7 @@ export default function Details() {
     const likeCount = event.likesCount ?? 0;
 
     return (
-        <section>
+        <section className="details-page">
             {error && <p className="error">{error}</p>}
 
             <img
@@ -110,88 +110,112 @@ export default function Details() {
                 src={event.imageUrl || 'https://picsum.photos/seed/hero/1200/400'}
                 alt={event.title}
             />
-            <h1>{event.title}</h1>
-            <p className="muted">
-                {new Date(event.startAt).toLocaleString()} — {event.location}
-            </p>
-            <p>{event.description}</p>
 
-            <div className="map-container">
+            <div className="details-section">
+                <h1>{event.title}</h1>
+                <p className="muted">
+                    {new Date(event.startAt).toLocaleString()} — {event.location}
+                </p>
+                <p>{event.description}</p>
+            </div>
+
+            <div className="details-section map-section">
                 <h3>Location</h3>
                 <Map address={event.location} />
             </div>
 
-            <div style={{marginTop:'20px'}}>
-                <Weather city={event.location}/>
+            <div className="details-section">
+                <Weather city={event.location} />
             </div>
 
-            <p>
-                <strong>Likes:</strong> {likeCount}
-            </p>
-
-            <div className="actions">
-                {user && (
-                    <button type="button" onClick={handleToggleLike}>
-                        Like
-                    </button>
-                )}
-                {isOwner && (
-                    <>
-                        <Link to={`/events/${event.id}/edit`}>Edit</Link>
-                        <button type="button" onClick={handleDeleteEvent}>
-                            Delete
-                        </button>
-                    </>
-                )}
-            </div>
-
-            <hr />
-            <h2>Comments</h2>
-
-            {user ? (
-                <div className="comment-form">
-          <textarea
-              value={commentText}
-              onChange={e => setCommentText(e.target.value)}
-              placeholder="Write a comment..."
-          />
-                    <button
-                        type="button"
-                        onClick={handleAddComment}
-                        disabled={!commentText.trim()}
-                    >
-                        Post
-                    </button>
-                </div>
-            ) : (
-                <p>
-                    <Link to="/login">Login</Link> to comment.
-                </p>
-            )}
-
-            <ul className="comments">
-                {comments.map(c => {
-                    const canDelete = user?.id === c.authorId;
-                    return (
-                        <li key={c.id}>
-                            <div className="comment-header">
-                <span className="muted">
-                  {new Date(c.createdAt).toLocaleString()}
+            <div className="details-section details-actions">
+                <span className="likes-count">
+                    Likes: <strong>{likeCount}</strong>
                 </span>
-                                {canDelete && (
-                                    <button
-                                        type="button"
-                                        onClick={() => handleDeleteComment(c.id)}
-                                    >
-                                        Delete
-                                    </button>
-                                )}
-                            </div>
-                            <p>{c.text}</p>
-                        </li>
-                    );
-                })}
-            </ul>
+
+                <div className="action-buttons">
+                    {user && (
+                        <button
+                            type="button"
+                            onClick={handleToggleLike}
+                            className="btn btn-outline"
+                        >
+                            Like
+                        </button>
+                    )}
+                    {isOwner && (
+                        <>
+                            <Link to={`/events/${event.id}/edit`} className="btn btn-secondary">
+                                Edit
+                            </Link>
+                            <button
+                                type="button"
+                                onClick={handleDeleteEvent}
+                                className="btn btn-danger"
+                            >
+                                Delete
+                            </button>
+                        </>
+                    )}
+                </div>
+            </div>
+
+            <div className="details-section comments-section">
+                <h2>Comments</h2>
+
+                {user ? (
+                    <form
+                        className="comment-form"
+                        onSubmit={e => {
+                            e.preventDefault();
+                            void handleAddComment();
+                        }}
+                    >
+                        <textarea
+                            className="comment-input"
+                            value={commentText}
+                            onChange={e => setCommentText(e.target.value)}
+                            placeholder="Write a comment..."
+                        />
+                        <button
+                            type="submit"
+                            className="btn btn-primary"
+                            disabled={!commentText.trim()}
+                        >
+                            Post
+                        </button>
+                    </form>
+                ) : (
+                    <p>
+                        <Link to="/login">Login</Link> to comment.
+                    </p>
+                )}
+
+                <ul className="comments-list">
+                    {comments.map(c => {
+                        const canDelete = user?.id === c.authorId;
+                        return (
+                            <li key={c.id} className="comment-item">
+                                <div className="comment-header">
+                                    <span className="muted">
+                                        {new Date(c.createdAt).toLocaleString()}
+                                    </span>
+                                    {canDelete && (
+                                        <button
+                                            type="button"
+                                            className="btn btn-outline btn-xs"
+                                            onClick={() => handleDeleteComment(c.id)}
+                                        >
+                                            Delete
+                                        </button>
+                                    )}
+                                </div>
+                                <p>{c.text}</p>
+                            </li>
+                        );
+                    })}
+                </ul>
+            </div>
         </section>
     );
 }
