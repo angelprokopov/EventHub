@@ -1,4 +1,4 @@
-export const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "https://localhost:7132";
+export const API_BASE = import.meta.env.VITE_API_URL ?? "https://localhost:7132";
 
 export async function http<T>(
     path: string,                     // 👈 must start with '/'
