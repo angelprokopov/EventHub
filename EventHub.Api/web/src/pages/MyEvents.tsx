@@ -11,7 +11,7 @@ export default function MyEvents() {
         api.list().then(all => setEvents(all.filter(e => e.createdBy === user?.id)));
     }, [user]);
     return (
-        <section>
+        <section className={"page"}>
             <h1>My Events</h1>
             <div className="grid">
                 {events.map(e => <EventCard key={e.id} e={e}/>)}

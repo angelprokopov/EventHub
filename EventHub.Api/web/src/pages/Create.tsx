@@ -48,49 +48,52 @@ export default function Create() {
     }
 
     return (
-        <form onSubmit={submit} className="form">
-            <h1>Create Event</h1>
-            <input
-                name="title"
-                value={values.title}
-                onChange={onChange}
-                placeholder="Title"
-                required
-            />
-            <textarea
-                name="description"
-                value={values.description}
-                onChange={onChange}
-                placeholder="Description"
-                required
-            />
-            <input
-                type="datetime-local"
-                name="startAt"
-                value={values.startAt}
-                onChange={onChange}
-                required
-            />
-            <input
-                name="location"
-                value={values.location}
-                onChange={onChange}
-                placeholder="Location"
-                required
-            />
-            <input
-                name="price"
-                value={values.price}
-                onChange={onChange}
-                placeholder="Price (optional)"
-            />
-            <input
-                name="imageUrl"
-                value={values.imageUrl}
-                onChange={onChange}
-                placeholder="Image URL"
-            />
-            <button>Create</button>
-        </form>
+        <section className="page">
+            <form onSubmit={submit} className="form">
+                <h1>Create Event</h1>
+                <input
+                    name="title"
+                    value={values.title}
+                    onChange={onChange}
+                    placeholder="Title"
+                    required
+                />
+                <textarea
+                    name="description"
+                    value={values.description}
+                    onChange={onChange}
+                    placeholder="Description"
+                    required
+                />
+                <input
+                    type="datetime-local"
+                    name="startAt"
+                    value={values.startAt}
+                    onChange={onChange}
+                    required
+                />
+                <input
+                    name="location"
+                    value={values.location}
+                    onChange={onChange}
+                    placeholder="Location"
+                    required
+                />
+                <input
+                    name="price"
+                    value={values.price}
+                    onChange={onChange}
+                    placeholder="Price (optional)"
+                />
+                <input
+                    name="imageUrl"
+                    value={values.imageUrl}
+                    onChange={onChange}
+                    placeholder="Image URL"
+                />
+                <button>Create</button>
+            </form>
+        </section>
+
     );
 }

@@ -65,31 +65,33 @@ export default function Edit() {
     }
 
     return (
-        <form onSubmit={submit} className="form">
-            <h1>Edit Event</h1>
-            <input name="title" value={values.title} onChange={onChange} required />
-            <textarea
-                name="description"
-                value={values.description}
-                onChange={onChange}
-                required
-            />
-            <input
-                type="datetime-local"
-                name="startAt"
-                value={values.startAt}
-                onChange={onChange}
-                required
-            />
-            <input
-                name="location"
-                value={values.location}
-                onChange={onChange}
-                required
-            />
-            <input name="price" value={values.price} onChange={onChange} />
-            <input name="imageUrl" value={values.imageUrl} onChange={onChange} />
-            <button>Save</button>
-        </form>
+        <section className="pagr">
+            <form onSubmit={submit} className="form">
+                <h1>Edit Event</h1>
+                <input name="title" value={values.title} onChange={onChange} required />
+                <textarea
+                    name="description"
+                    value={values.description}
+                    onChange={onChange}
+                    required
+                />
+                <input
+                    type="datetime-local"
+                    name="startAt"
+                    value={values.startAt}
+                    onChange={onChange}
+                    required
+                />
+                <input
+                    name="location"
+                    value={values.location}
+                    onChange={onChange}
+                    required
+                />
+                <input name="price" value={values.price} onChange={onChange} />
+                <input name="imageUrl" value={values.imageUrl} onChange={onChange} />
+                <button>Save</button>
+            </form>
+        </section>
     );
 }

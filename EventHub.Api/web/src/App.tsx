@@ -14,22 +14,25 @@ import Details from "./pages/Details.tsx";
 
 export default function App() {
     return (
-        <div className="app">
-            <Header />
-            <main className="container">
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/events" element={<Catalog/>}/>
-                    <Route path="/me/events" element={<Protected><MyEvents /></Protected>} />
-                    <Route path="/events/create" element={<Protected><Create /></Protected>} />
-                    <Route path="/events/:eventId" element={<Protected><Details/></Protected>}/>
-                    <Route path="/events xs/:eventId/edit" element={<Protected><Edit /></Protected>} />
+        <section className="page">
+            <div className="app">
+                <Header />
+                <main className="container">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/events" element={<Catalog/>}/>
+                        <Route path="/me/events" element={<Protected><MyEvents /></Protected>} />
+                        <Route path="/events/create" element={<Protected><Create /></Protected>} />
+                        <Route path="/events/:eventId" element={<Protected><Details/></Protected>}/>
+                        <Route path="/events xs/:eventId/edit" element={<Protected><Edit /></Protected>} />
 
-                    <Route path="/login" element={<PublicOnly><Login/></PublicOnly>}/>
-                    <Route path="/register" element={<PublicOnly><Register/></PublicOnly>}/>
-                    <Route path="*" element={<NotFound/>}/>
-                </Routes>
-            </main>
-        </div>
+                        <Route path="/login" element={<PublicOnly><Login/></PublicOnly>}/>
+                        <Route path="/register" element={<PublicOnly><Register/></PublicOnly>}/>
+                        <Route path="*" element={<NotFound/>}/>
+                    </Routes>
+                </main>
+            </div>
+        </section>
+
     )
 }

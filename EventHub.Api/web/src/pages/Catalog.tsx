@@ -33,7 +33,7 @@ export default function Catalog() {
     }
 
     return (
-        <section>
+        <section className={"page"}>
             <div className="catalog-header">
                 <div>
                     <h1>All Events</h1>

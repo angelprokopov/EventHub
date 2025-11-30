@@ -36,25 +36,27 @@ export default function Login() {
     }
 
     return (
-        <section className="page-center">
-            <div className="card">
-                <form onSubmit={submit} className="form">
-                    <h1>Login</h1>
-                    {error && <p className="error">{error}</p>}
-                    <input
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        placeholder="Email"
-                    />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        placeholder="Password"
-                    />
-                    <button className="btn btn-primary">Login</button>
-                </form>
-            </div>
+        <section className="page">
+            <section className="page-center">
+                <div className="card">
+                    <form onSubmit={submit} className="form">
+                        <h1>Login</h1>
+                        {error && <p className="error">{error}</p>}
+                        <input
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            placeholder="Email"
+                        />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            placeholder="Password"
+                        />
+                        <button className="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </section>
         </section>
     );
 }

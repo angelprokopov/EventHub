@@ -28,32 +28,35 @@ export default function Register() {
     }
 
     return (
-        <section className="page-center">
-            <div className="card">
-                <form onSubmit={submit} className="form">
-                    <h1>Register</h1>
-                    {error && <p className="error">{error}</p>}
-                    <input
-                        value={displayName}
-                        onChange={e => setDisplayName(e.target.value)}
-                        placeholder="Display name"
-                    />
-                    <input
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
-                        placeholder="Email"
-                        required
-                    />
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={e => setPassword(e.target.value)}
-                        placeholder="Password"
-                        required
-                    />
-                    <button className="btn btn-primary">Create account</button>
-                </form>
-            </div>
+        <section className="page">
+            <section className="page-center">
+                <div className="card">
+                    <form onSubmit={submit} className="form">
+                        <h1>Register</h1>
+                        {error && <p className="error">{error}</p>}
+                        <input
+                            value={displayName}
+                            onChange={e => setDisplayName(e.target.value)}
+                            placeholder="Display name"
+                        />
+                        <input
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            placeholder="Email"
+                            required
+                        />
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            placeholder="Password"
+                            required
+                        />
+                        <button className="btn btn-primary">Create account</button>
+                    </form>
+                </div>
+            </section>
         </section>
+
     );
 }
