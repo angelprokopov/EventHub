@@ -1,224 +1,179 @@
-# EventHub
 
-![.NET](https://img.shields.io/badge/.NET-7.0-blueviolet?style=for-the-badge)
-![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-Bundler-646cff?style=for-the-badge&logo=vite&logoColor=white)
-![SQL Server](https://img.shields.io/badge/SQL%20Server-Database-red?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)
+# EventHub – Full‑Stack Event Management Platform
+
+EventHub is a full‑stack web application built with **ASP.NET Core Web API**, **React + Vite**, **SQL Server / Azure SQL**, and **JWT authentication**.  
+It allows users to discover, create, like, and comment on events, enhanced with features such as interactive maps and real‑time weather data.
 
 ---
 
-## 📌 Overview
+## 🚀 Features
 
-**EventHub** is a full-stack web application where users can **discover, create, and manage community events**.  
-It features a modern **React + Vite frontend**, a secure **ASP.NET Core 7 Web API backend**, **JWT authentication**, and **SQL Server storage**.  
+### **Backend (ASP.NET Core 7/8 Web API)**
+- JWT authentication & authorization  
+- Entity Framework Core 7/8 with SQL Server  
+- Email confirmation via SMTP  
+- Event CRUD operations  
+- Comment system  
+- Like functionality  
+- Azure SQL compatible  
+- Swagger documentation  
 
-Designed with clean architecture principles, modular folders, and a polished UI.
+### **Frontend (React + Vite)**
+- Authentication system (login/register)  
+- Event listing, search, and details  
+- Map component using OpenStreetMap / Leaflet  
+- Weather widget using OpenWeather API  
+- Protected routes with Context API  
+- Polished UI with custom styling  
 
----
-
-## 📚 Table of Contents
-
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#️-installation)
-- [Backend Setup](#-backend-setup-aspnet-core-api)
-- [Frontend Setup](#-frontend-setup-react--vite)
-- [Running the Full Application](#-running-the-full-application)
-- [Database Migrations](#-database-migrations-ef-core)
-- [Authentication](#-authentication)
-- [Features](#-features-overview)
-- [Author](#-author)
-
----
-
-## 🚀 Tech Stack
-
-### **Backend**
-- ASP.NET Core 7 Web API  
-- Entity Framework Core 7  
-- SQL Server  
-- JWT Authentication  
-
-### **Frontend**
-- React 18  
-- Vite  
-- React Router  
-- Context API  
-- TypeScript  
-- Custom CSS Styling  
+### **Deployment**
+- Backend deployed to **Azure App Service**  
+- Frontend deployed to **Azure Static Web Apps**  
+- Connected to **Azure SQL Database**
 
 ---
 
-## 📁 Project Structure
+## 📦 Technologies Used
 
-```
-EventHub/
-│
-├── EventHub.Api/              # ASP.NET Core 7 Web API backend
-│   ├── Controllers/
-│   ├── Data/
-│   ├── Models/
-│   ├── Migrations/
-│   └── appsettings.json
-│
-└── web/                       # React + Vite frontend
-    ├── src/
-    │   ├── api/
-    │   ├── components/
-    │   ├── contexts/
-    │   ├── hooks/
-    │   ├── pages/
-    │   └── styles/
-    └── index.html
+| Layer | Technology |
+|------|------------|
+| API | ASP.NET Core 7/8, EF Core, SQL Server, JWT |
+| Frontend | React 18, Vite, React Router, Context API |
+| Database | SQL Server / Azure SQL |
+| Deployment | Azure App Service, Azure Static Web Apps |
+| Add‑ons | OpenWeather API, Leaflet Maps |
+
+---
+
+## 🛠 Installation & Setup
+
+### 1️⃣ **Clone the repository**
+```bash
+git clone https://github.com/YOUR_NAME/EventHub.git
+cd EventHub
 ```
 
 ---
 
-## 🛠️ Installation
+## 🗄 Backend Setup (API)
 
-### **Prerequisites**
-- Node.js 18+
-- .NET SDK 7+
-- SQL Server or LocalDB
-- npm package manager
-
----
-
-## 🔧 Backend Setup (ASP.NET Core API)
-
-### 1️⃣ Navigate to API folder
-
+### 2️⃣ Install dependencies
 ```bash
 cd EventHub.Api
+dotnet restore
 ```
 
-### 2️⃣ Add your connection string in `appsettings.json`
-
+### 3️⃣ Configure appsettings.json
+Create **appsettings.Development.json**:
 ```json
-"ConnectionStrings": {
-  "DefaultConnection": "Server=.;Database=EventHubDb;Trusted_Connection=True;TrustServerCertificate=True;"
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "YOUR_LOCAL_OR_AZURE_CONNECTION_STRING"
+  },
+  "Jwt": {
+    "Key": "YOUR_SECRET_KEY"
+  },
+  "SMTP": {
+    "Host": "smtp.gmail.com",
+    "Port": 587,
+    "User": "your@gmail.com",
+    "Pass": "your-app-password"
+  }
 }
 ```
 
-### 3️⃣ Run EF Core migrations
+---
 
+### 4️⃣ Apply database migrations
 ```bash
-dotnet ef migrations add InitialCreate
 dotnet ef database update
-```
-
-### 4️⃣ Start the API
-
-```bash
-dotnet run
-```
-
-Default API URL:
-
-```
-https://localhost:7043
 ```
 
 ---
 
-## 🎨 Frontend Setup (React + Vite)
+### 5️⃣ Run the API
+```bash
+dotnet run
+```
+API will run at:  
+**https://localhost:7132** (or the port shown in console)
 
-### 1️⃣ Navigate to the frontend folder
+---
 
+## 🎨 Frontend Setup (React)
+
+### 6️⃣ Install frontend dependencies
 ```bash
 cd web
-```
-
-### 2️⃣ Install dependencies
-
-```bash
 npm install
 ```
 
-### 3️⃣ Start the Vite dev server
+### 7️⃣ Configure environment variables  
+Create a **.env** file:
+```
+VITE_API_URL=https://localhost:7132
+VITE_WEATHER_KEY=YOUR_OPENWEATHER_KEY
+```
 
+### 8️⃣ Start the frontend
 ```bash
 npm run dev
 ```
 
-Frontend URL:
-
-```
-http://localhost:5173
-```
+Frontend runs at:  
+**http://localhost:5173**
 
 ---
 
-## 🔗 Running the Full Application
+## ☁️ Azure Deployment
 
-You must start **both**:
+### 🔹 Deploy API to Azure App Service
+1. Create an Azure App Service  
+2. Set runtime to **.NET 8 (LTS)**  
+3. Upload Publish Profile (from Visual Studio or Azure portal)  
+4. Update **ConnectionStrings** & **JWT Key** in Azure → *Configuration*  
+5. Redeploy
 
-### ✔️ API (backend)
-```
-cd EventHub.Api
-dotnet run
-```
+### 🔹 Deploy Frontend to Azure Static Web Apps
+1. Create a new Static Web App  
+2. Select GitHub → Your Repository  
+3. Use these settings:
 
-### ✔️ React App (frontend)
-```
-cd web
-npm run dev
-```
-
----
-
-## 🗄️ Database Migrations (EF Core)
-
-### Add new migration
-```bash
-dotnet ef migrations add MigrationName
-```
-
-### Update database
-```bash
-dotnet ef database update
-```
-
-### Remove last migration
-```bash
-dotnet ef migrations remove
-```
+| Setting | Value |
+|--------|-------|
+| App location | `web/` |
+| API location | *(empty)* |
+| Output folder | `dist` |
 
 ---
 
-## 🔒 Authentication
+## 🔄 CORS Configuration
 
-EventHub uses **JWT Bearer Tokens** to secure:
+In **Program.cs**:
+```csharp
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("react", policy =>
+        policy.WithOrigins(
+            "http://localhost:5173",
+            "https://YOUR_STATIC_APP.azurestaticapps.net"
+        )
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials()
+    );
+});
+```
 
-- User registration  
-- User login  
-- Protected API routes  
-- Event ownership (edit/delete)  
-- User-specific actions (likes, comments)
-
-Tokens are stored client-side and automatically attached to requests.
-
----
-
-## ⭐ Features Overview
-
-- Beautiful polished UI (Home, Catalog, Details)
-- User registration & login (JWT)
-- Create/Edit/Delete events
-- Event search
-- Event likes
-- Comments system
-- Private routes (protected pages)
-- Public-only pages (login/register hidden when logged in)
-- React Context for authentication
-- Clean reusable components
-- Responsive layout and modern styling
+In Azure App Service → **CORS settings**, leave empty if using code-based CORS (recommended).
 
 ---
 
-## 👤 Author
-
-Developed by **Angel** as part of a full-stack development project.
+## 📄 License
+MIT License – free to use & modify.
 
 ---
+
+## 🙌 Author
+Built by **Angel** as part of a full‑stack development project.
+
