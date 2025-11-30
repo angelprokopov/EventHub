@@ -24,7 +24,7 @@ export default function App() {
                         <Route path="/me/events" element={<Protected><MyEvents /></Protected>} />
                         <Route path="/events/create" element={<Protected><Create /></Protected>} />
                         <Route path="/events/:eventId" element={<Protected><Details/></Protected>}/>
-                        <Route path="/events xs/:eventId/edit" element={<Protected><Edit /></Protected>} />
+                        <Route path="/events/:eventId/edit" element={<Protected><Edit /></Protected>} />
 
                         <Route path="/login" element={<PublicOnly><Login/></PublicOnly>}/>
                         <Route path="/register" element={<PublicOnly><Register/></PublicOnly>}/>

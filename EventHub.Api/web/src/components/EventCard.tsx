@@ -1,47 +1,44 @@
 import { Link } from 'react-router-dom';
-import type { Event } from '../api/events';
+import type { Event as EventModel } from '../api/events';
+import { useCityImage } from '../hooks/useCityImage';
 
-export default function EventCard({ e }: { e: Event }) {
-    const date = new Date(e.startAt);
-    const priceLabel =
-        e.price && e.price > 0 ? `${e.price.toFixed(2)} €` : 'Free';
+type Props = {
+    e: EventModel;
+    variant?: 'default' | 'dashboard';
+};
+
+export default function EventCard({ e, variant = 'default' }: Props) {
+    const wrapperClass =
+        variant === 'dashboard'
+            ? 'event-card event-card--dashboard'
+            : 'event-card';
+
+    const cityImage = useCityImage(e.location, e.imageUrl);
+    const imgSrc = cityImage || 'https://picsum.photos/400';
+
+    const description =
+        e.description.length > 80
+            ? `${e.description.slice(0, 80)}…`
+            : e.description;
 
     return (
-        <article className="event-card">
-            <img
-                src={e.imageUrl || 'https://picsum.photos/seed/eventhub/600/300'}
-                alt={e.title}
-            />
-            <div className="event-card-body">
-                <div className="event-card-top">
-          <span className="badge-date">
-            {date.toLocaleDateString(undefined, {
-                weekday: 'short',
-                month: 'short',
-                day: 'numeric',
-            })}
-          </span>
-                    <span className="badge-price">{priceLabel}</span>
+        <article className={wrapperClass}>
+            <Link to={`/events/${e.id}`}>
+                <div style={{ position: 'relative' }}>
+                    <img src={imgSrc} alt={e.title} />
+                    <span className="event-card-pill">Science</span>
                 </div>
 
-                <h3 className="event-card-title">
-                    <Link to={`/events/${e.id}`}>{e.title}</Link>
-                </h3>
-
-                <p className="muted event-card-meta">
-                    {date.toLocaleTimeString(undefined, {
-                        hour: '2-digit',
-                        minute: '2-digit',
-                    })}{' '}
-                    · {e.location}
-                </p>
-
-                <p className="event-card-description">
-                    {e.description.length > 120
-                        ? `${e.description.slice(0, 117)}…`
-                        : e.description}
-                </p>
-            </div>
+                <div className="event-card-body">
+                    <div className="event-card-top">
+                        <h3 className="event-card-title">{e.title}</h3>
+                    </div>
+                    <p className="event-card-meta">
+                        {new Date(e.startAt).toLocaleDateString()} · {e.location}
+                    </p>
+                    <p className="event-card-description">{description}</p>
+                </div>
+            </Link>
         </article>
     );
 }

@@ -5,6 +5,7 @@ import * as commentsApi from '../api/comments';
 import { useAuth } from '../contexts/AuthContext';
 import Map from '../components/Map';
 import Weather from '../components/Weather';
+import {useCityImage} from "../hooks/useCityImage.ts";
 
 export default function Details() {
     const { eventId } = useParams();
@@ -15,6 +16,8 @@ export default function Details() {
     const [comments, setComments] = useState<commentsApi.Comment[]>([]);
     const [commentText, setCommentText] = useState('');
     const [error, setError] = useState('');
+    const cityImage = useCityImage(event?.location, event?.imageUrl)
+    const heroImage = cityImage || 'https://picsum.photos/1200/400'
 
     useEffect(() => {
         if (!eventId) return;
@@ -108,7 +111,7 @@ export default function Details() {
 
                 <img
                     className="hero"
-                    src={event.imageUrl || 'https://picsum.photos/seed/hero/1200/400'}
+                    src={heroImage}
                     alt={event.title}
                 />
 
