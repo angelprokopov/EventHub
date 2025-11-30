@@ -3,9 +3,7 @@
     "rewrite": "/index.html",
         "exclude": [
         "/assets/*",
-        "/favicon.ico",
-        "*/icon-*.png",
-        "*/logo-*.png"
+        "/favicon.ico"
     ]
 }
 }
