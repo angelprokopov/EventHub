@@ -46,7 +46,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("react", policy =>
     {
         policy
-        .WithOrigins("http://localhost:5173")
+        .WithOrigins("http://localhost:5173", "https://delightful-wave-04ffdbf03.3.azurestaticapps.net")
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials();
