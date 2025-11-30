@@ -1,179 +1,178 @@
+# 🎉 EventHub
 
-# EventHub – Full‑Stack Event Management Platform
-
-EventHub is a full‑stack web application built with **ASP.NET Core Web API**, **React + Vite**, **SQL Server / Azure SQL**, and **JWT authentication**.  
-It allows users to discover, create, like, and comment on events, enhanced with features such as interactive maps and real‑time weather data.
+EventHub is a full-stack event management platform built with **ASP.NET Core Web API**, **React**, and **SQL Server**, featuring authentication, event CRUD operations, likes, comments, weather/map integrations, and full cloud deployment on **Azure**.
 
 ---
 
-## 🚀 Features
+## 🚀 Tech Stack
 
-### **Backend (ASP.NET Core 7/8 Web API)**
-- JWT authentication & authorization  
-- Entity Framework Core 7/8 with SQL Server  
-- Email confirmation via SMTP  
-- Event CRUD operations  
-- Comment system  
-- Like functionality  
-- Azure SQL compatible  
-- Swagger documentation  
+### **Backend**
+![.NET 8](https://img.shields.io/badge/.NET-8.0-purple?logo=dotnet)
+![Entity Framework Core](https://img.shields.io/badge/EF%20Core-8.0-blue?logo=database)
+![SQL Server](https://img.shields.io/badge/SQL%20Server-A4A4A4?logo=microsoftsqlserver&logoColor=white)
+![JWT Auth](https://img.shields.io/badge/JWT-Authentication-green?logo=jsonwebtokens)
 
-### **Frontend (React + Vite)**
-- Authentication system (login/register)  
-- Event listing, search, and details  
-- Map component using OpenStreetMap / Leaflet  
-- Weather widget using OpenWeather API  
-- Protected routes with Context API  
-- Polished UI with custom styling  
+### **Frontend**
+![React](https://img.shields.io/badge/React-Vite-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)
+![React Router](https://img.shields.io/badge/React%20Router-6-red?logo=reactrouter)
+![Context API](https://img.shields.io/badge/Context%20API-State%20Management-yellow)
 
-### **Deployment**
-- Backend deployed to **Azure App Service**  
-- Frontend deployed to **Azure Static Web Apps**  
-- Connected to **Azure SQL Database**
+### **Cloud**
+![Azure App Service](https://img.shields.io/badge/Azure-App%20Service-0089D6?logo=microsoftazure)
+![Azure SQL](https://img.shields.io/badge/Azure-SQL%20Database-0078D4?logo=microsoftazure)
+![Azure Static Web Apps](https://img.shields.io/badge/Azure-Static%20Web%20Apps-3468C0?logo=microsoftazure)
 
 ---
 
-## 📦 Technologies Used
+## 📦 Features
 
-| Layer | Technology |
-|------|------------|
-| API | ASP.NET Core 7/8, EF Core, SQL Server, JWT |
-| Frontend | React 18, Vite, React Router, Context API |
-| Database | SQL Server / Azure SQL |
-| Deployment | Azure App Service, Azure Static Web Apps |
-| Add‑ons | OpenWeather API, Leaflet Maps |
+- 🔐 **JWT Authentication & Email Confirmation**
+- 👤 **User Registration & Login**
+- 📝 **Create / Edit / Delete Events**
+- 👍 **Event Likes**
+- 💬 **Comment System**
+- 🗺️ **Map Integration (Leaflet / OpenStreetMap)**
+- 🌦️ **Weather Integration (OpenWeather API)**
+- 📱 **Responsive Frontend**
+- ☁️ **Full Deployment on Azure (API + Frontend + SQL Database)**
 
 ---
 
-## 🛠 Installation & Setup
+## 📁 Project Structure
 
-### 1️⃣ **Clone the repository**
-```bash
-git clone https://github.com/YOUR_NAME/EventHub.git
+```
+/EventHub.Api       → ASP.NET Core 8 Web API  
+/web                → React + Vite frontend  
+```
+
+---
+
+## 🛠️ Installation
+
+### **1️⃣ Clone the repository**
+```sh
+git clone https://github.com/<your-username>/EventHub.git
 cd EventHub
 ```
 
 ---
 
-## 🗄 Backend Setup (API)
+## 🗄️ Backend Setup (API)
 
-### 2️⃣ Install dependencies
-```bash
+### **2️⃣ Install dependencies**
+```sh
 cd EventHub.Api
 dotnet restore
 ```
 
-### 3️⃣ Configure appsettings.json
-Create **appsettings.Development.json**:
+### **3️⃣ Configure appsettings.json**
+Update connection string and JWT key:
+
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "YOUR_LOCAL_OR_AZURE_CONNECTION_STRING"
+    "DefaultConnection": "Server=.;Database=EventHub;Trusted_Connection=True;TrustServerCertificate=True;"
   },
   "Jwt": {
-    "Key": "YOUR_SECRET_KEY"
-  },
-  "SMTP": {
-    "Host": "smtp.gmail.com",
-    "Port": 587,
-    "User": "your@gmail.com",
-    "Pass": "your-app-password"
+    "Key": "your-secret-key"
   }
 }
 ```
 
 ---
 
-### 4️⃣ Apply database migrations
-```bash
+### **4️⃣ Apply Migrations**
+```sh
 dotnet ef database update
 ```
 
 ---
 
-### 5️⃣ Run the API
-```bash
+### **5️⃣ Run the API**
+```sh
 dotnet run
 ```
-API will run at:  
-**https://localhost:7132** (or the port shown in console)
+
+Swagger will be available at:
+
+👉 https://localhost:7132/swagger
 
 ---
 
-## 🎨 Frontend Setup (React)
+## 🌐 Frontend Setup (React)
 
-### 6️⃣ Install frontend dependencies
-```bash
+### **6️⃣ Install dependencies**
+```sh
 cd web
 npm install
 ```
 
-### 7️⃣ Configure environment variables  
-Create a **.env** file:
+### **7️⃣ Configure `.env`**
 ```
 VITE_API_URL=https://localhost:7132
-VITE_WEATHER_KEY=YOUR_OPENWEATHER_KEY
+VITE_OPENWEATHER_KEY=your-weather-api-key
 ```
 
-### 8️⃣ Start the frontend
-```bash
+### **8️⃣ Start the frontend**
+```sh
 npm run dev
 ```
 
-Frontend runs at:  
-**http://localhost:5173**
+Runs at:
+
+👉 http://localhost:5173
 
 ---
 
-## ☁️ Azure Deployment
+## ☁️ Deployment Instructions
 
-### 🔹 Deploy API to Azure App Service
-1. Create an Azure App Service  
-2. Set runtime to **.NET 8 (LTS)**  
-3. Upload Publish Profile (from Visual Studio or Azure portal)  
-4. Update **ConnectionStrings** & **JWT Key** in Azure → *Configuration*  
-5. Redeploy
-
-### 🔹 Deploy Frontend to Azure Static Web Apps
-1. Create a new Static Web App  
-2. Select GitHub → Your Repository  
-3. Use these settings:
-
-| Setting | Value |
-|--------|-------|
-| App location | `web/` |
-| API location | *(empty)* |
-| Output folder | `dist` |
+### **🔵 Deploy API to Azure App Service**
+1. Publish from Visual Studio  
+2. Use runtime: **.NET 8 (LTS)**  
+3. Add environment variables:  
+   - `ConnectionStrings__DefaultConnection`  
+   - `Jwt__Key`  
+4. Redeploy & restart app
 
 ---
 
-## 🔄 CORS Configuration
+### **🟦 Deploy Frontend to Azure Static Web Apps**
+GitHub Actions config:
 
-In **Program.cs**:
+```yml
+app_location: "web"
+api_location: ""
+output_location: "dist"
+```
+
+---
+
+## 🔧 CORS Configuration
+
+Place in `Program.cs`:
+
 ```csharp
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("react", policy =>
         policy.WithOrigins(
             "http://localhost:5173",
-            "https://YOUR_STATIC_APP.azurestaticapps.net"
+            "https://<your-static-app>.azurestaticapps.net"
         )
-        .AllowAnyMethod()
         .AllowAnyHeader()
+        .AllowAnyMethod()
         .AllowCredentials()
     );
 });
 ```
 
-In Azure App Service → **CORS settings**, leave empty if using code-based CORS (recommended).
-
 ---
 
 ## 📄 License
-MIT License – free to use & modify.
+MIT License
 
 ---
 
 ## 🙌 Author
-Built by **Angel** as part of a full‑stack development project.
-
+Built by **Angel** as a full-stack development project.
