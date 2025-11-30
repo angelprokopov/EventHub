@@ -1,0 +1,4 @@
+VITE_API_BASE=https://localhost:7132
+VITE_GOOGLE_MAPS_KEY=AIzaSyB_lYrnenoRmmoywkHCenoDSk9RjkZudtw
+VITE_WEATHER_KEY=c6d9f3e533737cc96cc1e279c3c4717f
+VITE_API_URL=https://eventhubapi-hehvaravgzcpbdf5.canadacentral-01.azurewebsites.net
