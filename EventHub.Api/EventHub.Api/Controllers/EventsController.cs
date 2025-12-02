@@ -58,6 +58,18 @@ namespace EventHub.Api.Controllers
             await _db.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = ev.Id }, ev);
         }
+        [HttpGet("upcoming")]
+        public async Task<ActionResult<IEnumerable<Event>>> GetUpcoming()
+        {
+            var now = DateTime.UtcNow;
+            var events = await _db.Events
+                    .Where(e => e.StartAt > now)
+                    .OrderBy(e => e.StartAt)
+                    .Take(5)
+                    .ToListAsync();
+
+            return Ok(events);
+        }
 
         [Authorize]
         [HttpPut("{id}")]

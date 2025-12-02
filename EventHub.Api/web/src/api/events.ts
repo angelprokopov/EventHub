@@ -62,7 +62,10 @@ export function toggleLike(id: string, token: string) {
     );
 }
 
-// 🔍 Search helper – uses list() under the hood
+export function getUpcoming() {
+    return http<Event[]>('/api/events/upcoming');
+}
+
 export function search(query: string) {
     const trimmed = query.trim();
 
