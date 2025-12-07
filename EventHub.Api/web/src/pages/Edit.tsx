@@ -45,7 +45,7 @@ export default function Edit() {
                 location: e.location,
                 price: e.price?.toString() ?? '',
                 imageUrl: e.imageUrl,
-                category: e.category,
+                category: e.category ?? '',
             }),
         );
     }, [eventId, setValues]);
@@ -87,7 +87,7 @@ export default function Edit() {
                     required
                 />
                 <input
-                    name={"Category"}
+                    name="category"
                     value={values.category}
                     onChange={onChange}
                 />

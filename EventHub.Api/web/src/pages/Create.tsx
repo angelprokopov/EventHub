@@ -83,7 +83,7 @@ export default function Create() {
                     required
                 />
                 <input
-                    name={"Category"}
+                    name="category"
                     value={values.category}
                     onChange={onChange}
                     placeholder="Category"
