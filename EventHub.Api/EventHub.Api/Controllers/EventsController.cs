@@ -52,7 +52,8 @@ namespace EventHub.Api.Controllers
                 Location = dto.Location,
                 Price = dto.Price,
                 ImageUrl = dto.ImageUrl,
-                CreatedBy = userId!
+                CreatedBy = userId!,
+                Category = dto.Category
             };
             _db.Events.Add(ev);
             await _db.SaveChangesAsync();
@@ -85,6 +86,7 @@ namespace EventHub.Api.Controllers
             ev.Location = dto.Location;
             ev.Price = dto.Price;
             ev.ImageUrl = dto.ImageUrl;
+            ev.Category = dto.Category;
 
             await _db.SaveChangesAsync();
             return NoContent();

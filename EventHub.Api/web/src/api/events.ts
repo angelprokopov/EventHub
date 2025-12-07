@@ -11,6 +11,7 @@ export type Event = {
     imageUrl: string;
     createdBy: string;
     likesCount: number;
+    category: string;
 };
 
 // List events, optionally with filters (search, location)

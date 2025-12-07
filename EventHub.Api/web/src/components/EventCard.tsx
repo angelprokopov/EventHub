@@ -26,7 +26,7 @@ export default function EventCard({ e, variant = 'default' }: Props) {
             <Link to={`/events/${e.id}`}>
                 <div style={{ position: 'relative' }}>
                     <img src={imgSrc} alt={e.title} />
-                    <span className="event-card-pill">Science</span>
+                    <span className="event-card-pill">{e.category}</span>
                 </div>
 
                 <div className="event-card-body">
