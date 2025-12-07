@@ -98,6 +98,8 @@ Swagger will be available at:
 
 👉 https://localhost:7132/swagger
 
+Also, you can access the API from this address:
+👉 https://eventhubapi-hehvaravgzcpbdf5.canadacentral-01.azurewebsites.net/swagger
 ---
 
 ## 🌐 Frontend Setup (React)
@@ -123,6 +125,9 @@ Runs at:
 
 👉 http://localhost:5173
 
+Also, you can access the web app from this address
+
+👉 https://delightful-wave-04ffdbf03.3.azurestaticapps.net/ 
 ---
 
 ## ☁️ Deployment Instructions
