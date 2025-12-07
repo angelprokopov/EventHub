@@ -140,7 +140,6 @@ C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\staticweb
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\EventHub.8EBC9A40.Up2Date
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\EventHub.Api.dll
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\refint\EventHub.Api.dll

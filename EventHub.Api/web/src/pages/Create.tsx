@@ -10,11 +10,12 @@ type EventFormValues = {
     location: string;
     price: string;
     imageUrl: string;
+    category: string;
 };
 
 type EventCreatePayload = Pick<
     api.Event,
-    'title' | 'description' | 'startAt' | 'location' | 'price' | 'imageUrl'
+    'title' | 'description' | 'startAt' | 'location' | 'price' | 'imageUrl' | 'category'
 >;
 
 export default function Create() {
@@ -28,6 +29,7 @@ export default function Create() {
         location: '',
         price: '',
         imageUrl: '',
+        category:'',
     });
 
     async function submit(e: React.FormEvent<HTMLFormElement>) {
@@ -41,6 +43,7 @@ export default function Create() {
             location: values.location,
             imageUrl: values.imageUrl,
             price: values.price ? Number(values.price) : undefined,
+            category: values.category,
         };
 
         const created = await api.create(payload, token);
@@ -78,6 +81,12 @@ export default function Create() {
                     onChange={onChange}
                     placeholder="Location"
                     required
+                />
+                <input
+                    name={"Category"}
+                    value={values.category}
+                    onChange={onChange}
+                    placeholder="Category"
                 />
                 <input
                     name="price"

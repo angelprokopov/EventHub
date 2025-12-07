@@ -11,11 +11,12 @@ type EventFormValues = {
     location: string;
     price: string;
     imageUrl: string;
+    category: string;
 };
 
 type EventUpdatePayload = Pick<
     api.Event,
-    'title' | 'description' | 'startAt' | 'location' | 'price' | 'imageUrl'
+    'title' | 'description' | 'startAt' | 'location' | 'price' | 'imageUrl' | 'category'
 >;
 
 export default function Edit() {
@@ -30,6 +31,7 @@ export default function Edit() {
         location: '',
         price: '',
         imageUrl: '',
+        category: '',
     });
 
     useEffect(() => {
@@ -43,6 +45,7 @@ export default function Edit() {
                 location: e.location,
                 price: e.price?.toString() ?? '',
                 imageUrl: e.imageUrl,
+                category: e.category,
             }),
         );
     }, [eventId, setValues]);
@@ -58,6 +61,7 @@ export default function Edit() {
             location: values.location,
             imageUrl: values.imageUrl,
             price: values.price ? Number(values.price) : undefined,
+            category: values.category
         };
 
         await api.update(eventId, payload, token);
@@ -81,6 +85,11 @@ export default function Edit() {
                     value={values.startAt}
                     onChange={onChange}
                     required
+                />
+                <input
+                    name={"Category"}
+                    value={values.category}
+                    onChange={onChange}
                 />
                 <input
                     name="location"
