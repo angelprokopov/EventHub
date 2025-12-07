@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import wave from '../assets/wave.png'
 
 export default function Header() {
     const { user, logout } = useAuth();
@@ -7,7 +8,8 @@ export default function Header() {
     return (
         <header className="header">
             <Link to="/" className="logo">
-                EventHub
+                <img src={wave} alt="" className="wave-icon"/>
+                <span className="logo-text">EventHub</span>
             </Link>
 
             <nav className="nav">
