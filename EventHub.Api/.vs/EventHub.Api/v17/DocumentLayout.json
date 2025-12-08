@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\migrations\\20251207133729_addeventcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\migrations\\20251207133729_addeventcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\controllers\\eventscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\migrations\\20251207133729_addeventcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\migrations\\20251207133729_addeventcategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,6 +55,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "EventHub.Api\\Controllers\\CommentsController.cs",
+              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "EventHub.Api\\Controllers\\CommentsController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T20:54:30.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "20251207133729_AddEventCategory.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Migrations\\20251207133729_AddEventCategory.cs",
               "RelativeDocumentMoniker": "EventHub.Api\\Migrations\\20251207133729_AddEventCategory.cs",
@@ -69,9 +86,10 @@
               "RelativeDocumentMoniker": "EventHub.Api\\Controllers\\EventsController.cs",
               "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\EventsController.cs",
               "RelativeToolTip": "EventHub.Api\\Controllers\\EventsController.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAwwFgAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:33:10.407Z"
+              "WhenOpened": "2025-12-07T13:33:10.407Z",
+              "EditorCaption": ""
             }
           ]
         }

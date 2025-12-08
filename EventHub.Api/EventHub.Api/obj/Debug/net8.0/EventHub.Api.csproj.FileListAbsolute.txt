@@ -146,3 +146,4 @@ C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\refint\Ev
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\EventHub.Api.pdb
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\EventHub.Api.genruntimeconfig.cache
 C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\ref\EventHub.Api.dll
+C:\Users\Angel\source\repos\EventHub.Api\EventHub.Api\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -64,6 +64,7 @@ namespace EventHub.Api.Controllers
         {
             var now = DateTime.UtcNow;
             var events = await _db.Events
+                    .AsNoTracking()
                     .Where(e => e.StartAt > now)
                     .OrderBy(e => e.StartAt)
                     .Take(5)
