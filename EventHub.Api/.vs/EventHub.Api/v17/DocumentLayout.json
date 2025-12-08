@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|c:\\users\\angel\\source\\repos\\eventhub.api\\eventhub.api\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C7E0994-F74C-4746-AD82-049A581A8394}|EventHub.Api\\EventHub.Api.csproj|solutionrelative:eventhub.api\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,19 +59,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Program.cs",
+              "RelativeDocumentMoniker": "EventHub.Api\\Program.cs",
+              "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Program.cs",
+              "RelativeToolTip": "EventHub.Api\\Program.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAcwEkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T22:12:24.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CommentsController.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\CommentsController.cs",
               "RelativeDocumentMoniker": "EventHub.Api\\Controllers\\CommentsController.cs",
               "ToolTip": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\CommentsController.cs",
               "RelativeToolTip": "EventHub.Api\\Controllers\\CommentsController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-08T20:54:30.627Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "20251207133729_AddEventCategory.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Migrations\\20251207133729_AddEventCategory.cs",
               "RelativeDocumentMoniker": "EventHub.Api\\Migrations\\20251207133729_AddEventCategory.cs",
@@ -75,12 +92,11 @@
               "RelativeToolTip": "EventHub.Api\\Migrations\\20251207133729_AddEventCategory.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:37:30.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-07T13:37:30.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EventsController.cs",
               "DocumentMoniker": "C:\\Users\\Angel\\source\\repos\\EventHub.Api\\EventHub.Api\\Controllers\\EventsController.cs",
               "RelativeDocumentMoniker": "EventHub.Api\\Controllers\\EventsController.cs",
@@ -88,8 +104,7 @@
               "RelativeToolTip": "EventHub.Api\\Controllers\\EventsController.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAEIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-07T13:33:10.407Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-07T13:33:10.407Z"
             }
           ]
         }
