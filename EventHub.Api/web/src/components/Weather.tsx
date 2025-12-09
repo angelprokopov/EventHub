@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react'
-import {getWeatherData} from "../api/weather.ts";
+import { useEffect, useState } from 'react';
+import { getWeatherData } from '../api/weather.ts';
 
 type WeatherInfo = {
     main: {
@@ -10,6 +10,21 @@ type WeatherInfo = {
     weather: { description: string; icon: string }[];
 };
 
+function normalizeCity(raw: string): string {
+    // Split on commas, trim parts, remove empties
+    const parts = raw
+        .split(',')
+        .map(p => p.trim())
+        .filter(Boolean);
+
+    if (parts.length === 0) return raw;
+
+    if (parts.length >= 2) {
+        return parts[parts.length - 2]; // "Sofia"
+    }
+    return parts[0];
+}
+
 export default function Weather({ city }: { city: string }) {
     const [data, setData] = useState<WeatherInfo | null>(null);
     const [error, setError] = useState('');
@@ -17,9 +32,14 @@ export default function Weather({ city }: { city: string }) {
     useEffect(() => {
         async function load() {
             try {
-                const info = await getWeatherData(city);
+                setError('');
+                setData(null);
+
+                const normalizedCity = normalizeCity(city);
+                const info = await getWeatherData(normalizedCity);
                 setData(info);
-            } catch {
+            } catch (err) {
+                console.error('Weather error', err);
                 setError('Weather unavailable');
             }
         }
@@ -55,12 +75,10 @@ export default function Weather({ city }: { city: string }) {
                         {description.charAt(0).toUpperCase() + description.slice(1)}
                     </p>
                     <p>
-                        <strong>Temperature:</strong>{' '}
-                        {data.main.temp.toFixed(1)}°C
+                        <strong>Temperature:</strong> {data.main.temp.toFixed(1)}°C
                     </p>
                     <p>
-                        <strong>Feels like:</strong>{' '}
-                        {data.main.feels_like.toFixed(1)}°C
+                        <strong>Feels like:</strong> {data.main.feels_like.toFixed(1)}°C
                     </p>
                     <p>
                         <strong>Humidity:</strong> {data.main.humidity}%
