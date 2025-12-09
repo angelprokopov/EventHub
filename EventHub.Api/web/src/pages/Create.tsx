@@ -51,58 +51,110 @@ export default function Create() {
     }
 
     return (
-        <section className="page">
-            <form onSubmit={submit} className="form">
-                <h1>Create Event</h1>
-                <input
-                    name="title"
-                    value={values.title}
-                    onChange={onChange}
-                    placeholder="Title"
-                    required
-                />
-                <textarea
-                    name="description"
-                    value={values.description}
-                    onChange={onChange}
-                    placeholder="Description"
-                    required
-                />
-                <input
-                    type="datetime-local"
-                    name="startAt"
-                    value={values.startAt}
-                    onChange={onChange}
-                    required
-                />
-                <input
-                    name="location"
-                    value={values.location}
-                    onChange={onChange}
-                    placeholder="Location"
-                    required
-                />
-                <input
-                    name="category"
-                    value={values.category}
-                    onChange={onChange}
-                    placeholder="Category"
-                />
-                <input
-                    name="price"
-                    value={values.price}
-                    onChange={onChange}
-                    placeholder="Price (optional)"
-                />
-                <input
-                    name="imageUrl"
-                    value={values.imageUrl}
-                    onChange={onChange}
-                    placeholder="Image URL"
-                />
-                <button>Create</button>
-            </form>
-        </section>
+        <section className="page create-page">
+            <div className="form-card">
+                <header className="form-header">
+                    <h1>Create Event</h1>
+                    <p className="muted">
+                        Add the details for your event. You can always edit them later.
+                    </p>
+                </header>
 
+                <form onSubmit={submit} className="form-grid">
+                    <div className="field">
+                        <label htmlFor="title" className="field-label">Title</label>
+                        <input
+                            id="title"
+                            name="title"
+                            value={values.title}
+                            onChange={onChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="field">
+                        <label htmlFor="description" className="field-label">Description</label>
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows={4}
+                            value={values.description}
+                            onChange={onChange}
+                            required
+                        />
+                        <p className="field-help">
+                            Briefly describe what people can expect at your event.
+                        </p>
+                    </div>
+
+                    <div className="field-row">
+                        <div className="field">
+                            <label htmlFor="startAt" className="field-label">Date &amp; time</label>
+                            <input
+                                id="startAt"
+                                type="datetime-local"
+                                name="startAt"
+                                value={values.startAt}
+                                onChange={onChange}
+                                required
+                            />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="location" className="field-label">Location</label>
+                            <input
+                                id="location"
+                                name="location"
+                                value={values.location}
+                                onChange={onChange}
+                                placeholder="City, venue or address"
+                                required
+                            />
+                        </div>
+                    </div>
+
+                    <div className="field-row">
+                        <div className="field">
+                            <label htmlFor="category" className="field-label">Category</label>
+                            <input
+                                id="category"
+                                name="category"
+                                value={values.category}
+                                onChange={onChange}
+                                placeholder="e.g. Tech, Music, Workshop"
+                            />
+                        </div>
+
+                        <div className="field">
+                            <label htmlFor="price" className="field-label">Price (optional)</label>
+                            <input
+                                id="price"
+                                name="price"
+                                value={values.price}
+                                onChange={onChange}
+                                placeholder="0 for free"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="field">
+                        <label htmlFor="imageUrl" className="field-label">Image URL</label>
+                        <input
+                            id="imageUrl"
+                            name="imageUrl"
+                            value={values.imageUrl}
+                            onChange={onChange}
+                            placeholder="Link to a cover image"
+                        />
+                    </div>
+
+                    <div className="form-actions">
+                        <button type="submit" className="btn btn-primary wide">
+                            Create event
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
     );
 }

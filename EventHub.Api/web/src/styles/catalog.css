@@ -1,0 +1,156 @@
+/* =============================== */
+/* CATALOG (ALL EVENTS)            */
+/* =============================== */
+
+.catalog-page {
+    background: #080b17;
+    color: #f9fafb;
+    min-height: 100vh;
+    padding: 2.5rem 0 4rem;
+}
+
+.catalog-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 1.8rem;
+}
+
+.catalog-header h1 {
+    font-size: 2.1rem;
+    margin-bottom: 0.3rem;
+}
+
+.catalog-stats {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.catalog-stats > div {
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.9rem;
+    background: rgba(20, 26, 55, 0.9);
+    border: 1px solid rgba(255,255,255,0.06);
+    text-align: right;
+    min-width: 70px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Toolbar */
+
+.catalog-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr) auto auto;
+    gap: 1rem;
+    align-items: flex-end;
+    margin-bottom: 1.8rem;
+    padding: 1rem 1.1rem;
+    border-radius: 1.3rem;
+    background: rgba(16, 20, 45, 0.95);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.catalog-search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.catalog-search-group input {
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(8, 10, 30, 0.95);
+    padding: 0.6rem 0.85rem;
+    color: #f9fafb;
+}
+
+.catalog-search-group input:focus {
+    outline: none;
+    border-color: #7b5cff;
+    box-shadow: 0 0 0 1px rgba(123,92,255,0.7);
+}
+
+.field-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.75;
+}
+
+.catalog-view-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.pill-toggle {
+    display: inline-flex;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.pill-toggle button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.pill-toggle button.active {
+    background: linear-gradient(90deg,#6d28d9,#8b5cf6);
+    box-shadow: 0 0 16px rgba(123,92,255,0.7);
+}
+
+.catalog-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary.small {
+    padding: 0.5rem 0.95rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+/* Grid */
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .catalog-toolbar {
+        grid-template-columns: minmax(0,1fr);
+    }
+
+    .catalog-actions {
+        justify-content: flex-start;
+    }
+}

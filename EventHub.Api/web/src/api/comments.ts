@@ -1,7 +1,7 @@
 import { http } from './httpClient';
 
 
-export type Comment = { id: string; eventId: string; authorId: string; text: string; createdAt: string };
+export type Comment = { id: string; eventId: string; authorName: string; text: string; createdAt: string };
 export function list(eventId: string) { return http<Comment[]>(`/api/events/${eventId}/comments`); }
 export function create(eventId: string, text: string, token: string) {
     return http<Comment>(`/api/events/${eventId}/comments`, { method: 'POST', body: JSON.stringify({ text }) }, token);
