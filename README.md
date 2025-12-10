@@ -21,8 +21,9 @@ EventHub is a full-stack event management platform built with **ASP.NET Core Web
 7. [Backend Setup](#backend-setup-api)  
 8. [Frontend Setup](#frontend-setup-react)  
 9. [Deployment Instructions](#-deployment-instructions)  
-10. [Environment Variables](#environment-variables)  
-11. [License](#-license)
+10. [Environment Variables](#environment-variables)
+11. [Screenshots](#-screenshots)  
+12. [License](#-license)
 
 ---
 
@@ -245,6 +246,22 @@ Jwt__Key=...
 VITE_API_URL=...
 VITE_OPENWEATHER_KEY=...
 ```
+
+## 📸 Screenshots
+### Home
+![Home](./EventHub.Api/screenshots/home.png)
+
+### Events Catalog
+![Events](./EventHub.Api/screenshots/all_events.png)
+
+### Event Details
+![Details](./EventHub.Api/screenshots/details.png)
+
+### Login
+![Login](./EventHub.Api/screenshots/login.png)
+
+### Register
+![Register](./EventHub.Api/screenshots/register.png)
 
 # 📄 License
 
