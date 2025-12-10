@@ -26,6 +26,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web\", "{A9807B56-AB
 		SlnRelativePath = "web\"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHub.Tests", "EventHub.Tests\EventHub.Tests.csproj", "{4973C63B-579F-497B-9A1D-CEF04F724DC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{A9807B56-ABAE-FC54-E455-F6F1CAEFB532}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{4973C63B-579F-497B-9A1D-CEF04F724DC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4973C63B-579F-497B-9A1D-CEF04F724DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4973C63B-579F-497B-9A1D-CEF04F724DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4973C63B-579F-497B-9A1D-CEF04F724DC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

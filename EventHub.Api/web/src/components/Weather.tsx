@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getWeatherData } from '../api/weather.ts';
+import {normalizeCity} from "../utils/city.ts";
 
 type WeatherInfo = {
     main: {
@@ -9,30 +10,6 @@ type WeatherInfo = {
     };
     weather: { description: string; icon: string }[];
 };
-
-function normalizeCity(raw: string): string {
-    if (!raw) return raw;
-
-    // Remove anything in parentheses
-    const withoutParens = raw.replace(/\(.*?\)/g, '');
-
-    const parts = withoutParens
-        .split(',')
-        .map(p => p.trim())
-        .filter(Boolean);
-
-    if (parts.length === 0) return raw;
-
-    if (parts.length === 1) {
-        // "Sofia"
-        return parts[0];
-    }
-
-    if (parts.length === 2) {
-        return parts[1];
-    }
-    return parts[parts.length - 2];
-}
 
 export default function Weather({ city }: { city: string }) {
     const [data, setData] = useState<WeatherInfo | null>(null);
