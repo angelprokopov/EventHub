@@ -13,7 +13,13 @@ namespace EventHub.Api.Controllers
     public class EventsController : ControllerBase
     {
         private readonly AppDbContext _db;
-        public EventsController(AppDbContext db) => _db = db;
+        private readonly ILogger<EventsController> _logger;
+
+        public EventsController(AppDbContext db, ILogger<EventsController> logger)
+        {
+            _db = db;
+            _logger = logger;
+        }
        
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Event>>> GetAll([FromQuery] string? q, [FromQuery] string? location)
@@ -77,10 +83,28 @@ namespace EventHub.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(string id, EventUpdateDto dto)
         {
+            // 1) Get the current user id from the JWT token
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                         ?? User.FindFirst("sub")?.Value;
+
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Forbid();
+            }
+
+            // 2) Load the event
             var ev = await _db.Events.FindAsync(id);
-            if(ev is null) return NotFound();
-            var uid = User.FindFirst("sub")?.Value;
-            if (uid != ev.CreatedBy) return Forbid();
+            if (ev == null)
+            {
+                return NotFound();
+            }
+
+            // 4) Only the author can edit
+            if (ev.CreatedBy != userId)
+            {
+                return Forbid();
+            }
+
             ev.Title = dto.Title;
             ev.Description = dto.Description;
             ev.StartAt = dto.StartAt;
