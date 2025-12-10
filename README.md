@@ -4,8 +4,10 @@ EventHub is a full-stack event management platform built with **ASP.NET Core Web
 
 ---
 
-## 📑 **Table of Contents**
+## 📚 Documentation
+🔗 [API Reference](./API.md)
 
+## 📑 **Table of Contents**
 1. [Tech Stack](#-tech-stack)  
 2. [Features](#-features)  
 3. [Architecture](#-architecture)  
