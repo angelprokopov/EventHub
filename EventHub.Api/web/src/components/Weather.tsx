@@ -11,18 +11,27 @@ type WeatherInfo = {
 };
 
 function normalizeCity(raw: string): string {
-    // Split on commas, trim parts, remove empties
-    const parts = raw
+    if (!raw) return raw;
+
+    // Remove anything in parentheses
+    const withoutParens = raw.replace(/\(.*?\)/g, '');
+
+    const parts = withoutParens
         .split(',')
         .map(p => p.trim())
         .filter(Boolean);
 
     if (parts.length === 0) return raw;
 
-    if (parts.length >= 2) {
-        return parts[parts.length - 2]; // "Sofia"
+    if (parts.length === 1) {
+        // "Sofia"
+        return parts[0];
     }
-    return parts[0];
+
+    if (parts.length === 2) {
+        return parts[1];
+    }
+    return parts[parts.length - 2];
 }
 
 export default function Weather({ city }: { city: string }) {
