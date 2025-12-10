@@ -19,17 +19,40 @@ export default function App() {
                 <Header />
                 <main className="container">
                     <Routes>
+                        {/* Public routes */}
                         <Route path="/" element={<Home />} />
-                        <Route path="/events" element={<Catalog/>}/>
-                        <Route path="/me/events" element={<Protected><MyEvents /></Protected>} />
-                        <Route path="/events/create" element={<Protected><Create /></Protected>} />
-                        <Route path="/events/:eventId" element={<Protected><Details/></Protected>}/>
-                        <Route path="/events/:eventId/edit" element={<Protected><Edit /></Protected>} />
+                        <Route path="/events" element={<Catalog />} />
+                        <Route path="/events/:eventId" element={<Details />} />
 
-                        <Route path="/login" element={<PublicOnly><Login/></PublicOnly>}/>
-                        <Route path="/register" element={<PublicOnly><Register/></PublicOnly>}/>
-                        <Route path="*" element={<NotFound/>}/>
+                        {/* Protected routes (need login) */}
+                        <Route element={<Protected/>}>
+                            <Route path="/events/create" element={<Create />} />
+                            <Route path="/events/:eventId/edit" element={<Edit />} />
+                            <Route path="/my-events" element={<MyEvents />} />
+                        </Route>
+
+                        {/* Auth pages – only for guests */}
+                        <Route
+                            path="/login"
+                            element={
+                                <PublicOnly>
+                                    <Login />
+                                </PublicOnly>
+                            }
+                        />
+                        <Route
+                            path="/register"
+                            element={
+                                <PublicOnly>
+                                    <Register />
+                                </PublicOnly>
+                            }
+                        />
+
+                        {/* 404 fallback */}
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
+
                 </main>
             </div>
         </section>

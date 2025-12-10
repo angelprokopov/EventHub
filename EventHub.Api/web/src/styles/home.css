@@ -173,7 +173,7 @@
 /* =============================== */
 
 .features {
-    padding: 100px 8%;
+    padding: 10px 8%;
 }
 
 .features h2 {
@@ -183,7 +183,7 @@
 
 .feature-grid {
     display: flex;
-    gap: 30px;
+    gap: 25px;
 }
 
 .feature-card {
